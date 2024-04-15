@@ -1,0 +1,100 @@
+.container {
+	max-width: 1440px;
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: 30px;
+	padding-right: 30px;
+	width: 100%;
+	@media (max-width: 1024px) {
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+}
+
+body {
+	background: var(--white-color);
+	font-family: 'Inter', sans-serif;
+	font-optical-sizing: auto;
+}
+.ymaps-2-1-79-gotoymaps {
+	display: none !important;
+}
+.ymaps-2-1-79-gototech {
+	display: none !important;
+}
+.ymaps-2-1-79-copyright {
+	display: none !important;
+}
+.ymaps-2-1-79-gototaxi {
+	display: none !important;
+}
+.swiper-button-disabled {
+	opacity: 0;
+}
+.navigation {
+	button {
+		transition: var(--trs-300);
+	}
+}
+
+.dp__input_wrap {
+	input {
+		border: none;
+		border-bottom: 1px solid var(--border-color);
+		border-radius: 0;
+		padding-bottom: 20px;
+		padding-right: 0;
+		padding-left: 0;
+		padding-top: 0;
+	}
+	.dp__input_icon {
+		padding: 0;
+		right: 0;
+		left: auto;
+		width: 28px;
+		height: 21px;
+		top: 13px;
+	}
+	.dp__clear_icon {
+		display: none;
+	}
+}
+.dp__outer_menu_wrap {
+	.dp__active_date {
+		background-color: var(--red-color);
+	}
+	.dp__today {
+		border-color: var(--red-color);
+	}
+	.dp__button_bottom {
+		display: none;
+	}
+}
+.image-wrapper {
+	overflow: hidden;
+	&:hover {
+		img {
+			transform: scale(1.2);
+		}
+	}
+	img {
+		transition: var(--trs-300);
+	}
+}
+
+.navigation {
+	button {
+		&:hover {
+			svg {
+				path {
+					stroke: var(--red-color);
+				}
+			}
+		}
+		svg {
+			path {
+				transition: var(--trs-300);
+			}
+		}
+	}
+}

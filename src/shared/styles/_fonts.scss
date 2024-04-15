@@ -1,0 +1,22 @@
+@font-face {
+	font-family: 'Vremena Grotesk';
+	src: url('/fonts/VremenaGroteskBook.woff2') format('woff2'),
+		url('/fonts/VremenaGroteskBook.woff') format('woff');
+	font-weight: 350;
+	font-display: swap;
+}
+@font-face {
+	font-family: 'Vremena Grotesk';
+	src: url('/fonts/VremenaGrotesk.woff2') format('woff2'),
+		url('/fonts/VremenaGrotesk.woff') format('woff');
+	font-weight: 400;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Vremena Grotesk';
+	src: url('/fonts/VremenaGroteskMedium.woff2') format('woff2'),
+		url('/fonts/VremenaGroteskMedium.woff') format('woff');
+	font-weight: 500;
+	font-display: swap;
+}
