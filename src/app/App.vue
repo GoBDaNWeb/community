@@ -6,6 +6,7 @@ import { EventModal } from '@/widgets/event-modal';
 import { Footer } from '@/widgets/footer';
 import { Header } from '@/widgets/header';
 import { MikvaModal } from '@/widgets/mikva-modal';
+import { MobileMenu } from '@/widgets/mobile-menu';
 import { SuccessModal } from '@/widgets/success-modal';
 
 const router = useRoute();
@@ -21,6 +22,7 @@ watch(router, () => {
 
 <template>
 	<Header />
+	<MobileMenu />
 	<RouterView />
 	<Footer />
 	<EventModal />

@@ -2,6 +2,7 @@ import ArrowDownIcon from './ArrowDownIcon.vue';
 import ArrowDownOutlineIcon from './ArrowDownOutlineIcon.vue';
 import ArrowLeftIcon from './ArrowLeftIcon.vue';
 import ArrowRightIcon from './ArrowRightIcon.vue';
+import BurgerIcon from './BurgerIcon.vue';
 import CloseIcon from './CloseIcon.vue';
 import DateIcon from './DateIcon.vue';
 import HebrewIcon from './HebrewIcon.vue';
@@ -29,5 +30,6 @@ export {
 	ArrowDownIcon,
 	CloseIcon,
 	DateIcon,
-	ArrowDownOutlineIcon
+	ArrowDownOutlineIcon,
+	BurgerIcon
 };

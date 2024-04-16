@@ -6,7 +6,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import { Navigation } from 'swiper/modules';
 
-defineProps(['prev', 'next', 'spaceBetween', 'slidesPerView']);
+defineProps(['prev', 'next', 'spaceBetween', 'slidesPerView', 'breakpoints']);
 
 const modules = ref([Navigation]);
 </script>
@@ -21,6 +21,7 @@ const modules = ref([Navigation]);
 		}"
 		:modules="modules"
 		class="swiper"
+		:breakpoints="breakpoints"
 	>
 		<slot></slot>
 	</Swiper>

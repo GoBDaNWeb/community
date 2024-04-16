@@ -12,6 +12,8 @@ defineProps(['title']);
 </template>
 
 <style lang="scss" scoped>
+@import '@/shared/styles/vars';
+
 .badge {
 	display: flex;
 	align-items: center;
@@ -24,6 +26,10 @@ defineProps(['title']);
 		font-weight: 500;
 		text-transform: uppercase;
 		white-space: nowrap;
+		@media (max-width: $tab) {
+			font-size: 12px;
+			line-height: 14px;
+		}
 	}
 }
 </style>

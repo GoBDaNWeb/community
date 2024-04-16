@@ -64,7 +64,22 @@ const next = ref(null);
 				<button ref="next"><ArrowRightIcon /></button>
 			</div>
 			<div class="swiper container">
-				<Swiper :next="next" :prev="prev" spaceBetween="30" :slidesPerView="1.4">
+				<Swiper
+					:next="next"
+					:prev="prev"
+					spaceBetween="30"
+					:slidesPerView="1.4"
+					:breakpoints="{
+						0: {
+							slidesPerView: 1.2,
+							spaceBetween: 20
+						},
+						1024: {
+							slidesPerView: 1.4,
+							spaceBetween: 30
+						}
+					}"
+				>
 					<SwiperSlide v-for="(about, index) in aboutSwiper" :key="index">
 						<div class="image-wrapper">
 							<img :src="about" alt="about" />
@@ -77,11 +92,20 @@ const next = ref(null);
 </template>
 
 <style lang="scss" scoped>
+@import '@/shared/styles/vars';
+
 .about {
 	margin-top: 133px;
+	@media (max-width: $tab) {
+		margin-top: 100px;
+	}
 	.about-top {
 		display: flex;
 		align-items: flex-start;
+		@media (max-width: $tab) {
+			flex-direction: column;
+			gap: 20px;
+		}
 		.text-wrapper {
 			flex: 1;
 			display: flex;
@@ -92,6 +116,10 @@ const next = ref(null);
 				line-height: 64px;
 				letter-spacing: -1px;
 				color: var(--gray-color);
+				@media (max-width: $tab) {
+					font-size: 36px;
+					line-height: 39px;
+				}
 			}
 		}
 	}
@@ -100,6 +128,9 @@ const next = ref(null);
 		grid-template-columns: repeat(3, 1fr);
 		margin-top: 50px;
 		gap: 50px;
+		@media (max-width: $tab) {
+			grid-template-columns: 1fr;
+		}
 		.left {
 			h5 {
 				color: var(--gray-color);
@@ -107,22 +138,37 @@ const next = ref(null);
 				font-size: 32px;
 				line-height: 38px;
 				letter-spacing: -1px;
+				@media (max-width: $tab) {
+					font-size: 24px;
+					line-height: 28px;
+				}
 			}
 			.info {
 				margin-top: 50px;
 				display: flex;
 				flex-direction: column;
 				gap: 50px;
+				@media (max-width: $tab) {
+					margin-top: 30px;
+					gap: 30px;
+				}
 				.info-item {
 					display: flex;
 					flex-direction: column;
 					gap: 25px;
+					@media (max-width: $tab) {
+						gap: 15px;
+					}
 					h6 {
 						color: var(--gray-color);
 						font-weight: 500;
 						font-size: 24px;
 						line-height: 28px;
 						letter-spacing: -1px;
+						@media (max-width: $tab) {
+							font-size: 18px;
+							line-height: 21px;
+						}
 					}
 					p {
 						color: var(--gray-color);
@@ -142,6 +188,11 @@ const next = ref(null);
 				font-size: 32px;
 				line-height: 38px;
 				letter-spacing: -1px;
+				@media (max-width: $tab) {
+					margin-top: 30px;
+					font-size: 24px;
+					line-height: 28px;
+				}
 				span {
 					color: var(--gold-color);
 					margin-top: 10px;
@@ -154,10 +205,17 @@ const next = ref(null);
 		margin-top: 30px;
 		padding-bottom: 30px;
 		border-bottom: 1px solid var(--border-color);
+		@media (max-width: $tab) {
+			margin-top: 50px;
+			padding-bottom: 20px;
+		}
 		.navigation {
 			margin-bottom: 30px;
 			display: flex;
 			justify-content: flex-end;
+			@media (max-width: $tab) {
+				display: none;
+			}
 		}
 		.swiper {
 			.image-wrapper {

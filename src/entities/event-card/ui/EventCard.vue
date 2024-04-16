@@ -22,6 +22,8 @@ defineProps(['img', 'time', 'badgeTitle', 'title', 'url']);
 </template>
 
 <style lang="scss" scoped>
+@import '@/shared/styles/vars';
+
 .event-card {
 	&:hover {
 		.image-wrapper {
@@ -50,6 +52,9 @@ defineProps(['img', 'time', 'badgeTitle', 'title', 'url']);
 	}
 	.content {
 		margin-top: 32px;
+		@media (max-width: $tab) {
+			margin-top: 20px;
+		}
 		.info {
 			display: flex;
 			align-items: center;
@@ -60,6 +65,10 @@ defineProps(['img', 'time', 'badgeTitle', 'title', 'url']);
 				font-size: 14px;
 				line-height: 16px;
 				letter-spacing: -1px;
+				@media (max-width: $tab) {
+					font-size: 12px;
+					line-height: 14px;
+				}
 			}
 		}
 		h5 {
@@ -70,6 +79,11 @@ defineProps(['img', 'time', 'badgeTitle', 'title', 'url']);
 			font-size: 32px;
 			line-height: 38px;
 			letter-spacing: -1px;
+			@media (max-width: $tab) {
+				margin-top: 15px;
+				font-size: 24px;
+				line-height: 28px;
+			}
 		}
 	}
 }

@@ -31,8 +31,13 @@ import { donations, gratitude } from '../config';
 </template>
 
 <style lang="scss" scoped>
+@import '@/shared/styles/vars';
+
 .tsdaka-list {
 	margin-top: 80px;
+	@media (max-width: $tab) {
+		margin-top: 50px;
+	}
 	.top {
 		h3 {
 			color: var(--gray-color);
@@ -40,6 +45,10 @@ import { donations, gratitude } from '../config';
 			font-size: 64px;
 			line-height: 64px;
 			letter-spacing: -1px;
+			@media (max-width: $tab) {
+				font-size: 36px;
+				line-height: 39px;
+			}
 		}
 	}
 	.content {
@@ -47,11 +56,26 @@ import { donations, gratitude } from '../config';
 		grid-template-columns: 1fr 0.5fr;
 		gap: 30px;
 		margin-top: 50px;
+		@media (max-width: $desktop-sm) {
+			grid-template-columns: 1fr 0.7fr;
+			gap: 20px;
+		}
+		@media (max-width: $tab) {
+			margin-top: 30px;
+			grid-template-columns: 1fr;
+		}
 		.list {
 			display: grid;
 			grid-template-columns: repeat(2, 1fr);
 			column-gap: 30px;
 			row-gap: 80px;
+			@media (max-width: $desktop-sm) {
+				column-gap: 20px;
+				row-gap: 50px;
+			}
+			@media (max-width: $pre-mob) {
+				grid-template-columns: 1fr;
+			}
 		}
 		.gratitude-wrapper {
 			position: relative;

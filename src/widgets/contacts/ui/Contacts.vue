@@ -66,30 +66,54 @@ import { Badge } from '@/shared/ui';
 </template>
 
 <style lang="scss" scoped>
+@import '@/shared/styles/vars';
+
 .contacts {
 	margin-top: 132px;
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
 	gap: 30px;
 	padding-bottom: 30px;
+	@media (max-width: $desktop-sm) {
+		grid-template-columns: 1fr;
+	}
+	@media (max-width: $tab) {
+		padding-bottom: 20px;
+		margin-top: 100px;
+	}
 	.contacts-left {
 		.info {
 			margin-top: 35px;
 			display: grid;
 			grid-template-columns: repeat(2, 1fr);
 			gap: 30px;
+			@media (max-width: $tab) {
+				margin-top: 50px;
+				gap: 50px;
+			}
+			@media (max-width: $tab-sm) {
+				grid-template-columns: 1fr;
+			}
 			.info-left {
 				h6 {
 					color: var(--gray-color);
 					font-weight: 500;
 					font-size: 24px;
 					line-height: 28px;
+					@media (max-width: $tab) {
+						font-size: 18px;
+						line-height: 21px;
+					}
 				}
 				.contacts-info {
 					display: flex;
 					flex-direction: column;
 					gap: 20px;
 					margin-top: 35px;
+					@media (max-width: $tab) {
+						margin-top: 25px;
+						gap: 15px;
+					}
 					.address,
 					.tel {
 						color: var(--gray-color);
@@ -110,11 +134,19 @@ import { Badge } from '@/shared/ui';
 					margin-top: 35px;
 					padding-top: 35px;
 					border-top: 1px solid var(--border-color);
+					@media (max-width: $tab) {
+						margin-top: 25px;
+						padding-top: 25px;
+					}
 					p {
 						color: var(--gray-color);
 						font-weight: 500;
 						font-size: 20px;
 						line-height: 26px;
+						@media (max-width: $tab) {
+							font-size: 18px;
+							line-height: 21px;
+						}
 					}
 					a {
 						margin-top: 20px;
@@ -135,11 +167,18 @@ import { Badge } from '@/shared/ui';
 					line-height: 28px;
 					letter-spacing: -1px;
 					color: var(--gray-color);
+					@media (max-width: $tab) {
+						font-size: 18px;
+						line-height: 21px;
+					}
 				}
 				.schedule {
 					display: flex;
 					flex-direction: column;
 					margin-top: 35px;
+					@media (max-width: $tab) {
+						margin-top: 25px;
+					}
 					li {
 						padding-top: 15px;
 						padding-bottom: 15px;
@@ -147,6 +186,10 @@ import { Badge } from '@/shared/ui';
 						display: flex;
 						align-items: center;
 						justify-content: space-between;
+						@media (max-width: $tab) {
+							padding-top: 10px;
+							padding-bottom: 10px;
+						}
 						p {
 							color: var(--gray-color);
 							font-weight: 500;
@@ -173,6 +216,9 @@ import { Badge } from '@/shared/ui';
 					font-size: 16px;
 					line-height: 20px;
 					letter-spacing: -1px;
+					@media (max-width: $tab) {
+						margin-top: 25px;
+					}
 				}
 			}
 		}
@@ -182,11 +228,20 @@ import { Badge } from '@/shared/ui';
 			gap: 30px;
 			align-items: stretch;
 			height: fit-content;
+			@media (max-width: $tab) {
+				margin-top: 50px;
+				gap: 20px;
+			}
 			.image-wrapper {
 				min-width: 155px;
 				max-width: 155px;
 				height: 155px;
 				background: var(--gold-color);
+				@media (max-width: $tab) {
+					min-width: 93px;
+					max-width: 93px;
+					height: 93px;
+				}
 				img {
 					width: 100%;
 					height: 100%;
@@ -200,17 +255,34 @@ import { Badge } from '@/shared/ui';
 				padding-top: 30px;
 				width: 100%;
 				border-top: 1px solid var(--border-color);
+				@media (max-width: $tab) {
+					padding-top: 20px;
+				}
 				p {
 					font-weight: 500;
 					font-size: 32px;
 					line-height: 38px;
 					letter-spacing: -1px;
 					color: var(--red-color);
-
+					@media (max-width: $tab) {
+						font-size: 24px;
+						line-height: 28px;
+					}
 					span {
 						color: var(--gold-color);
 					}
 				}
+			}
+		}
+	}
+	.contacts-right {
+		@media (max-width: $desktop-sm) {
+			position: relative;
+			padding-bottom: 55%;
+			& > div {
+				position: absolute;
+				width: 100%;
+				height: 100%;
 			}
 		}
 	}

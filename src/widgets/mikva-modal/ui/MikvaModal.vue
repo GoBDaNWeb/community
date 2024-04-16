@@ -100,6 +100,8 @@ watch([name, phone], () => {
 </template>
 
 <style lang="scss" scoped>
+@import '@/shared/styles/vars';
+
 .mikva-modal.active {
 	opacity: 1;
 	pointer-events: all;
@@ -133,10 +135,21 @@ watch([name, phone], () => {
 		justify-content: center;
 		transform: translateX(100%);
 		transition: var(--trs-300);
+		@media (max-width: $tab) {
+			width: 75vw;
+			padding: 20px;
+		}
+		@media (max-width: $tab-sm) {
+			width: 100vw;
+		}
 		.close-btn {
 			position: absolute;
 			top: 30px;
 			right: 30px;
+			@media (max-width: $tab) {
+				top: 20px;
+				right: 20px;
+			}
 		}
 		h3 {
 			color: var(--gray-color);
@@ -144,16 +157,28 @@ watch([name, phone], () => {
 			font-size: 48px;
 			line-height: 48px;
 			letter-spacing: -1px;
+			text-align: center;
+			@media (max-width: $tab) {
+				font-size: 32px;
+				line-height: 35px;
+			}
 		}
 		form {
 			margin-top: 61px;
 			width: 100%;
+			@media (max-width: $tab) {
+				margin-top: 40px;
+			}
 			.double-input {
 				display: grid;
 				grid-template-columns: repeat(2, 1fr);
 				gap: 30px;
 				width: 100%;
 				margin-bottom: 40px;
+				@media (max-width: $tab) {
+					grid-template-columns: 1fr;
+					gap: 40px;
+				}
 			}
 			p {
 				color: var(--gray-color);
@@ -162,6 +187,11 @@ watch([name, phone], () => {
 				line-height: 19px;
 				text-align: center;
 				margin-top: 50px;
+				@media (max-width: $tab) {
+					font-size: 11px;
+					line-height: 15px;
+					margin-top: 40px;
+				}
 				a {
 					color: var(--red-color);
 				}
@@ -173,6 +203,9 @@ watch([name, phone], () => {
 				button {
 					width: 250px;
 					margin: auto;
+					@media (max-width: $tab) {
+						width: 320px;
+					}
 				}
 			}
 		}

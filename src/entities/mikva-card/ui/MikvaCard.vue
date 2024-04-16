@@ -15,6 +15,8 @@ defineProps(['img', 'title', 'text']);
 </template>
 
 <style lang="scss" scoped>
+@import '@/shared/styles/vars';
+
 .mikva-card {
 	.image-wrapper {
 		padding-bottom: 100%;
@@ -34,6 +36,10 @@ defineProps(['img', 'title', 'text']);
 			font-size: 32px;
 			line-height: 38px;
 			letter-spacing: -1px;
+			@media (max-width: $tab) {
+				font-size: 24px;
+				line-height: 28px;
+			}
 		}
 		p {
 			color: var(--gray-color);
@@ -41,6 +47,10 @@ defineProps(['img', 'title', 'text']);
 			font-weight: 400;
 			line-height: 22px;
 			letter-spacing: -1px;
+			@media (max-width: $tab) {
+				font-size: 16px;
+				line-height: 22px;
+			}
 		}
 	}
 }

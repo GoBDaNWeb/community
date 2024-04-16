@@ -24,15 +24,25 @@ import { Badge } from '@/shared/ui';
 </template>
 
 <style lang="scss" scoped>
+@import '@/shared/styles/vars';
+
 .donations {
 	margin-top: 130px;
-	padding: 30px;
-
 	border-bottom: 1px solid var(--border-color);
+	padding-top: 30px;
+	padding-bottom: 30px;
+	@media (max-width: $tab) {
+		margin-top: 100px;
+		padding-bottom: 20px;
+	}
 	.donation-inner {
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
 		gap: 72px;
+		@media (max-width: $tab) {
+			grid-template-columns: 1fr;
+			gap: 30px;
+		}
 		.left {
 			h3 {
 				margin-top: 70px;
@@ -41,6 +51,11 @@ import { Badge } from '@/shared/ui';
 				font-size: 64px;
 				line-height: 64px;
 				letter-spacing: -1px;
+				@media (max-width: $tab) {
+					margin-top: 20px;
+					font-size: 36px;
+					line-height: 39px;
+				}
 				span {
 					color: var(--gold-color);
 				}
@@ -52,6 +67,11 @@ import { Badge } from '@/shared/ui';
 				font-size: 24px;
 				line-height: 28px;
 				letter-spacing: -1px;
+				@media (max-width: $tab) {
+					font-size: 18px;
+					line-height: 21px;
+					margin-top: 30px;
+				}
 			}
 		}
 		.right {
@@ -59,6 +79,9 @@ import { Badge } from '@/shared/ui';
 				width: 100%;
 				height: 675px;
 				background: var(--light-gray-color);
+				@media (max-width: $tab) {
+					height: 500px;
+				}
 			}
 		}
 	}

@@ -40,24 +40,43 @@ import { LogoSmallIcon } from '@/shared/icons';
 </template>
 
 <style lang="scss" scoped>
+@import '@/shared/styles/vars';
+
 .hero {
 	margin-top: 80px;
 	padding-bottom: 30px;
 	border-bottom: 1px solid var(--border-color);
+	@media (max-width: $tab) {
+		margin-top: 20px;
+	}
 	.hero-inner {
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
 		gap: 30px;
+		@media (max-width: $tab) {
+			gap: 50px;
+			grid-template-columns: 1fr;
+		}
 		.hero-left {
+			@media (max-width: $tab) {
+				order: 1;
+			}
 			.text {
 				padding-bottom: 180px;
 				border-bottom: 1px solid var(--border-color);
+				@media (max-width: $tab) {
+					padding-bottom: 30px;
+				}
 				h1 {
 					color: var(--gray-color);
 					font-weight: 500;
 					font-size: 64px;
 					line-height: 64px;
 					letter-spacing: -1px;
+					@media (max-width: $tab) {
+						font-size: 36px;
+						line-height: 39px;
+					}
 				}
 				h4 {
 					color: var(--gray-color);
@@ -65,6 +84,11 @@ import { LogoSmallIcon } from '@/shared/icons';
 					font-size: 32px;
 					line-height: 32px;
 					letter-spacing: -1px;
+					@media (max-width: $tab) {
+						margin-top: 30px;
+						font-size: 24px;
+						line-height: 28px;
+					}
 				}
 				p {
 					padding-top: 30px;
@@ -73,6 +97,9 @@ import { LogoSmallIcon } from '@/shared/icons';
 					font-size: 16px;
 					line-height: 22px;
 					letter-spacing: -1px;
+					@media (max-width: $tab) {
+						padding-top: 20px;
+					}
 				}
 			}
 			.alert {
@@ -90,6 +117,10 @@ import { LogoSmallIcon } from '@/shared/icons';
 					font-size: 24px;
 					line-height: 28px;
 					letter-spacing: -1px;
+					@media (max-width: $tab) {
+						font-size: 18px;
+						line-height: 21px;
+					}
 					span {
 						color: var(--gold-color);
 						margin-top: 10px;
@@ -99,6 +130,9 @@ import { LogoSmallIcon } from '@/shared/icons';
 			}
 		}
 		.hero-right {
+			@media (max-width: $tab) {
+				order: 0;
+			}
 			.image-wrapper {
 				padding-bottom: 100%;
 				position: relative;

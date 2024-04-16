@@ -29,6 +29,8 @@ const collectingPerc = (+props.currentCost / +props.totalCost) * 100;
 </template>
 
 <style lang="scss" scoped>
+@import '@/shared/styles/vars';
+
 .donation-card {
 	height: 100%;
 	display: flex;
@@ -69,6 +71,10 @@ const collectingPerc = (+props.currentCost / +props.totalCost) * 100;
 		display: block;
 		margin-top: 30px;
 		transition: var(--trs-300);
+		@media (max-width: $tab) {
+			font-size: 18px;
+			line-height: 21px;
+		}
 	}
 	.content {
 		display: flex;
@@ -76,12 +82,17 @@ const collectingPerc = (+props.currentCost / +props.totalCost) * 100;
 
 		.collecting {
 			margin-top: 30px;
+
 			& > span {
 				color: var(--red-color);
 				font-weight: 500;
 				font-size: 32px;
 				line-height: 38px;
 				letter-spacing: -1px;
+				@media (max-width: $tab) {
+					font-size: 24px;
+					line-height: 28px;
+				}
 			}
 			.current-collecting {
 				margin-top: 10px;
@@ -90,6 +101,7 @@ const collectingPerc = (+props.currentCost / +props.totalCost) * 100;
 				position: relative;
 				height: 20px;
 				margin-bottom: 20px;
+
 				.line {
 					position: absolute;
 					border-radius: 999px;

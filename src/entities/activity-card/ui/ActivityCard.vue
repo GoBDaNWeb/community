@@ -22,11 +22,20 @@ defineProps(['img', 'title', 'activityList']);
 </template>
 
 <style lang="scss" scoped>
+@import '@/shared/styles/vars';
+
 .activity-card {
 	.image-wrapper {
 		position: relative;
 		padding-bottom: 100%;
 		margin-bottom: -70px;
+		min-width: 340px;
+		min-height: 340px;
+		@media (max-width: $tab) {
+			min-width: 263px;
+			min-height: 263px;
+			margin-bottom: 0;
+		}
 		img {
 			position: absolute;
 			width: 100%;
@@ -46,6 +55,14 @@ defineProps(['img', 'title', 'activityList']);
 			position: absolute;
 			top: 0;
 			left: 0;
+			@media (max-width: $desktop-sm) {
+				width: 300px;
+			}
+			@media (max-width: $tab) {
+				width: 227px;
+				height: 25px;
+				top: -25px;
+			}
 		}
 		h5 {
 			color: var(--gray-color);
@@ -56,15 +73,26 @@ defineProps(['img', 'title', 'activityList']);
 			z-index: 3;
 			position: relative;
 			padding-top: 37px;
+			@media (max-width: $tab) {
+				font-size: 24px;
+				line-height: 28px;
+				padding-top: 0;
+			}
 		}
 		ul {
 			margin-top: 32px;
 			display: flex;
 			flex-direction: column;
 			gap: 15px;
+			@media (max-width: $tab) {
+				gap: 7px;
+			}
 			li {
 				display: flex;
 				gap: 37px;
+				@media (max-width: $tab) {
+					gap: 10px;
+				}
 				p {
 					color: var(--gray-color);
 					font-weight: 400;

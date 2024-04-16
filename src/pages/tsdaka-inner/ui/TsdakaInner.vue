@@ -29,6 +29,9 @@ import { gratitude } from '../config';
 				</p>
 				<div class="widget"></div>
 				<Gratitude :donationList="gratitude" />
+				<div class="btn-wrapper">
+					<RouterLink :to="PATH_PAGE.tsdaka"><ArrowLeftIcon />Назад к списку</RouterLink>
+				</div>
 			</div>
 			<div class="right">
 				<div class="tsdaka-block">
@@ -46,11 +49,22 @@ import { gratitude } from '../config';
 
 <style lang="scss">
 .tsdaka-inner {
+	.left,
 	.right {
 		.btn-wrapper {
 			svg {
 				path {
 					stroke: var(--red-color);
+					transition: var(--trs-300);
+				}
+			}
+			a {
+				&:hover {
+					svg {
+						path {
+							stroke: var(--gold-color);
+						}
+					}
 				}
 			}
 		}
@@ -58,13 +72,23 @@ import { gratitude } from '../config';
 }
 </style>
 <style lang="scss" scoped>
+@import '@/shared/styles/vars';
+
 .tsdaka-inner {
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
 	gap: 30px;
 	margin-top: 80px;
 	margin-bottom: 100px;
+	@media (max-width: $tab) {
+		grid-template-columns: 1fr;
+		margin-top: 20px;
+		gap: 50px;
+	}
 	.left {
+		@media (max-width: $tab) {
+			order: 1;
+		}
 		h1 {
 			color: var(--gray-color);
 			font-weight: 500;
@@ -72,6 +96,11 @@ import { gratitude } from '../config';
 			line-height: 64px;
 			letter-spacing: -1px;
 			margin-bottom: 50px;
+			@media (max-width: $tab) {
+				font-size: 36px;
+				line-height: 39px;
+				margin-bottom: 30px;
+			}
 		}
 		p {
 			color: var(--gray-color);
@@ -86,10 +115,39 @@ import { gratitude } from '../config';
 			height: 675px;
 			margin-top: 50px;
 			margin-bottom: 30px;
+			@media (max-width: $tab) {
+				height: 500px;
+				margin-top: 30px;
+				margin-bottom: 20px;
+			}
+		}
+		.btn-wrapper {
+			display: none;
+			margin-top: 50px;
+			@media (max-width: $tab) {
+				display: block;
+			}
+			a {
+				color: var(--red-color);
+				display: flex;
+				align-items: center;
+				gap: 10px;
+				font-weight: 500;
+				font-size: 28px;
+				line-height: 28px;
+				letter-spacing: -1px;
+				transition: var(--trs-300);
+				&:hover {
+					color: var(--gold-color);
+				}
+			}
 		}
 	}
 	.right {
 		position: relative;
+		@media (max-width: $tab) {
+			order: 0;
+		}
 		.tsdaka-block {
 			position: sticky;
 			top: 150px;
@@ -117,6 +175,13 @@ import { gratitude } from '../config';
 				font-size: 32px;
 				line-height: 38px;
 				letter-spacing: -1px;
+				transition: var(--trs-300);
+				@media (max-width: $tab) {
+					display: none;
+				}
+				&:hover {
+					color: var(--gold-color);
+				}
 			}
 		}
 	}

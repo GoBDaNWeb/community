@@ -50,20 +50,34 @@ watch(route, () => {
 }
 </style>
 <style lang="scss" scoped>
+@import '@/shared/styles/vars';
+
 .events {
 	margin-top: 80px;
 	margin-bottom: 100px;
+	@media (max-width: $tab) {
+		margin-top: 50px;
+		margin-bottom: 30px;
+	}
 	h1 {
 		color: var(--gray-color);
 		font-weight: 500;
 		font-size: 64px;
 		line-height: 64px;
 		letter-spacing: -1px;
+		@media (max-width: $tab) {
+			font-size: 36px;
+			line-height: 39px;
+		}
 	}
 	.load-more {
 		padding-top: 30px;
 		border-top: 1px solid var(--border-color);
 		margin-top: 80px;
+		@media (max-width: $tab) {
+			padding-top: 20px;
+			margin-top: 50px;
+		}
 		.load-more-inner {
 			display: flex;
 			justify-content: center;
@@ -77,8 +91,15 @@ watch(route, () => {
 				align-items: center;
 				gap: 10px;
 				transition: var(--trs-300);
-
+				@media (max-width: $tab) {
+					font-size: 24px;
+					line-height: 28px;
+				}
 				svg {
+					@media (max-width: $tab) {
+						width: 27px;
+						height: 25px;
+					}
 					path {
 						transition: var(--trs-300);
 					}

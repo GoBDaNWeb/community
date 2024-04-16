@@ -18,15 +18,24 @@ defineProps(['donationList']);
 </template>
 
 <style lang="scss" scoped>
+@import '@/shared/styles/vars';
+
 .gratitude {
 	background: var(--light-gray-color);
 	padding: 30px;
+	@media (max-width: $tab) {
+		padding: 20px;
+	}
 	p {
 		color: var(--red-color);
 		font-weight: 500;
 		font-size: 32px;
 		line-height: 38px;
 		letter-spacing: -1px;
+		@media (max-width: $tab) {
+			font-size: 24px;
+			line-height: 28px;
+		}
 		span {
 			color: var(--gold-color);
 		}
@@ -36,6 +45,9 @@ defineProps(['donationList']);
 		display: flex;
 		flex-direction: column;
 		gap: 30px;
+		@media (max-width: $tab) {
+			gap: 20px;
+		}
 		li {
 			border-bottom: 1px solid rgba(230, 72, 72, 0.2);
 			padding-bottom: 10px;
@@ -48,6 +60,10 @@ defineProps(['donationList']);
 				font-size: 24px;
 				line-height: 28px;
 				letter-spacing: -1px;
+				@media (max-width: $tab) {
+					font-size: 18px;
+					line-height: 21px;
+				}
 			}
 			span {
 				font-weight: 400;

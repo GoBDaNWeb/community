@@ -87,13 +87,23 @@ import { Button } from '@/shared/ui';
 </template>
 
 <style lang="scss" scoped>
+@import '@/shared/styles/vars';
+
 .become-member {
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
 	gap: 30px;
 	margin-top: 80px;
 	margin-bottom: 100px;
+	@media (max-width: $tab) {
+		margin-top: 20px;
+		gap: 50px;
+		grid-template-columns: 1fr;
+	}
 	.left {
+		@media (max-width: $tab) {
+			order: 1;
+		}
 		h1 {
 			color: var(--gray-color);
 			font-weight: 500;
@@ -101,6 +111,10 @@ import { Button } from '@/shared/ui';
 			line-height: 64px;
 			letter-spacing: -1px;
 			margin-bottom: 32px;
+			@media (max-width: $tab) {
+				font-size: 36px;
+				line-height: 39px;
+			}
 		}
 		span {
 			color: var(--red-color);
@@ -108,15 +122,28 @@ import { Button } from '@/shared/ui';
 			font-size: 32px;
 			line-height: 38px;
 			letter-spacing: -1px;
+			@media (max-width: $tab) {
+				font-size: 24px;
+				line-height: 28px;
+			}
 		}
 		ul {
 			display: flex;
 			flex-direction: column;
 			gap: 10px;
 			margin-top: 20px;
+			@media (max-width: $tab) {
+				gap: 7px;
+			}
 			li {
 				display: flex;
 				gap: 20px;
+				svg {
+					@media (max-width: $tab) {
+						min-width: 12px;
+						min-height: 15px;
+					}
+				}
 				p {
 					font-weight: 400;
 					color: var(--gray-color);
@@ -129,9 +156,15 @@ import { Button } from '@/shared/ui';
 		button {
 			margin-top: 33px;
 			width: 250px;
+			@media (max-width: $tab) {
+				width: 322px;
+			}
 		}
 	}
 	.right {
+		@media (max-width: $tab) {
+			order: 0;
+		}
 		.image-wrapper {
 			position: relative;
 			padding-bottom: 100%;

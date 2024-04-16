@@ -37,6 +37,8 @@ watch(
 </template>
 
 <style lang="scss" scoped>
+@import '@/shared/styles/vars';
+
 .success-modal.active {
 	opacity: 1;
 	pointer-events: all;
@@ -70,10 +72,21 @@ watch(
 		justify-content: center;
 		transform: translateX(100%);
 		transition: var(--trs-300);
+		@media (max-width: $tab) {
+			width: 75vw;
+			padding: 20px;
+		}
+		@media (max-width: $tab-sm) {
+			width: 100vw;
+		}
 		.close-btn {
 			position: absolute;
 			top: 30px;
 			right: 30px;
+			@media (max-width: $tab) {
+				top: 20px;
+				right: 20px;
+			}
 		}
 		h3 {
 			color: var(--gray-color);
@@ -81,6 +94,11 @@ watch(
 			font-size: 48px;
 			line-height: 48px;
 			letter-spacing: -1px;
+			text-align: center;
+			@media (max-width: $tab) {
+				font-size: 32px;
+				line-height: 35px;
+			}
 		}
 	}
 }
